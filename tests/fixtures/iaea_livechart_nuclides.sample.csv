@@ -1,0 +1,3 @@
+record_id,z,n,a,symbol,nuclide_id,half_life_sec,half_life_uncertainty_sec,state
+Mc290,115,175,290,Mc,Mc-290,0.65,0.05,ground
+Nh286,113,173,286,Nh,Nh-286,0.12,0.01,ground
