@@ -1,0 +1,137 @@
+[
+  {
+    "nuclide_id": "C-12",
+    "element_symbol": "C",
+    "atomic_number_z": 6,
+    "neutron_number_n": 6,
+    "mass_number_a": 12,
+    "isomer_label": "ground",
+    "half_life_seconds": null,
+    "half_life_uncertainty_seconds": null,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "example",
+      "source_record_id": "C12"
+    }
+  },
+  {
+    "nuclide_id": "Nh-286",
+    "element_symbol": "Nh",
+    "atomic_number_z": 113,
+    "neutron_number_n": 173,
+    "mass_number_a": 286,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.12,
+    "half_life_uncertainty_seconds": 0.01,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Nh286"
+    }
+  },
+  {
+    "nuclide_id": "Fl-288",
+    "element_symbol": "Fl",
+    "atomic_number_z": 114,
+    "neutron_number_n": 174,
+    "mass_number_a": 288,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.75,
+    "half_life_uncertainty_seconds": 0.06,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Fl288"
+    }
+  },
+  {
+    "nuclide_id": "Fl-289",
+    "element_symbol": "Fl",
+    "atomic_number_z": 114,
+    "neutron_number_n": 175,
+    "mass_number_a": 289,
+    "isomer_label": "ground",
+    "half_life_seconds": 2.10,
+    "half_life_uncertainty_seconds": 0.12,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Fl289"
+    }
+  },
+  {
+    "nuclide_id": "Mc-290",
+    "element_symbol": "Mc",
+    "atomic_number_z": 115,
+    "neutron_number_n": 175,
+    "mass_number_a": 290,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.65,
+    "half_life_uncertainty_seconds": 0.05,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Mc290"
+    }
+  },
+  {
+    "nuclide_id": "Mc-291",
+    "element_symbol": "Mc",
+    "atomic_number_z": 115,
+    "neutron_number_n": 176,
+    "mass_number_a": 291,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.83,
+    "half_life_uncertainty_seconds": 0.08,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Mc291"
+    }
+  },
+  {
+    "nuclide_id": "Lv-292",
+    "element_symbol": "Lv",
+    "atomic_number_z": 116,
+    "neutron_number_n": 176,
+    "mass_number_a": 292,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.02,
+    "half_life_uncertainty_seconds": 0.005,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Lv292"
+    }
+  },
+  {
+    "nuclide_id": "Ts-294",
+    "element_symbol": "Ts",
+    "atomic_number_z": 117,
+    "neutron_number_n": 177,
+    "mass_number_a": 294,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.05,
+    "half_life_uncertainty_seconds": 0.01,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Ts294"
+    }
+  },
+  {
+    "nuclide_id": "Og-295",
+    "element_symbol": "Og",
+    "atomic_number_z": 118,
+    "neutron_number_n": 177,
+    "mass_number_a": 295,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.0007,
+    "half_life_uncertainty_seconds": 0.0001,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Og295"
+    }
+  }
+]
