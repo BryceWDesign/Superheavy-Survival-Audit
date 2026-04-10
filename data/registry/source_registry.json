@@ -1,0 +1,46 @@
+[
+  {
+    "source_id": "iaea_livechart",
+    "display_name": "IAEA LiveChart of Nuclides",
+    "publisher": "International Atomic Energy Agency",
+    "access_mode": "api",
+    "homepage_url": "https://www-nds.iaea.org/relnsd/vcharthtml/api_v0_guide.html",
+    "citation_hint": "Cite the IAEA LiveChart of Nuclides API and associated Nuclear Data Section resources as appropriate.",
+    "license_note": "Upstream facts and records remain subject to upstream terms and citation norms.",
+    "version_hint": "API guide v0",
+    "last_verified_date": "2026-04-10"
+  },
+  {
+    "source_id": "ame2020",
+    "display_name": "Atomic Mass Evaluation 2020",
+    "publisher": "Atomic Mass Data Center",
+    "access_mode": "download",
+    "homepage_url": "https://www-nds.iaea.org/amdc/",
+    "citation_hint": "Cite AME2020 and related Atomic Mass Data Center resources.",
+    "license_note": "Upstream facts and records remain subject to upstream terms and citation norms.",
+    "version_hint": "AME2020",
+    "last_verified_date": "2026-04-10"
+  },
+  {
+    "source_id": "nubase2020",
+    "display_name": "NUBASE2020",
+    "publisher": "Atomic Mass Data Center",
+    "access_mode": "download",
+    "homepage_url": "https://www-nds.iaea.org/amdc/",
+    "citation_hint": "Cite NUBASE2020 and related Atomic Mass Data Center resources.",
+    "license_note": "Upstream facts and records remain subject to upstream terms and citation norms.",
+    "version_hint": "NUBASE2020",
+    "last_verified_date": "2026-04-10"
+  },
+  {
+    "source_id": "ensdf",
+    "display_name": "Evaluated Nuclear Structure Data File",
+    "publisher": "National Nuclear Data Center",
+    "access_mode": "database",
+    "homepage_url": "https://www.nndc.bnl.gov/ensdf/",
+    "citation_hint": "Cite ENSDF or the specific derivative service used to access ENSDF content.",
+    "license_note": "Upstream facts and records remain subject to upstream terms and citation norms.",
+    "version_hint": "evaluated dataset",
+    "last_verified_date": "2026-04-10"
+  }
+]
