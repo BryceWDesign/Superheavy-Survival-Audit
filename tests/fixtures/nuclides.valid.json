@@ -1,0 +1,32 @@
+[
+  {
+    "nuclide_id": "Mc-290",
+    "element_symbol": "Mc",
+    "atomic_number_z": 115,
+    "neutron_number_n": 175,
+    "mass_number_a": 290,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.65,
+    "half_life_uncertainty_seconds": 0.05,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Mc290"
+    }
+  },
+  {
+    "nuclide_id": "Nh-286",
+    "element_symbol": "Nh",
+    "atomic_number_z": 113,
+    "neutron_number_n": 173,
+    "mass_number_a": 286,
+    "isomer_label": "ground",
+    "half_life_seconds": 0.12,
+    "half_life_uncertainty_seconds": 0.01,
+    "is_evaluated": true,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Nh286"
+    }
+  }
+]
