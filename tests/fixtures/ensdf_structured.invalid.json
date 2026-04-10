@@ -1,0 +1,12 @@
+{
+  "dataset_id": "ensdf-invalid",
+  "decay_branches": [
+    {
+      "branch_id": "Bad-Branch",
+      "parent_nuclide_id": "Mc-290",
+      "decay_mode": "magic",
+      "branching_fraction": 1.2
+    }
+  ],
+  "radiation_observations": []
+}
