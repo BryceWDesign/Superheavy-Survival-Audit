@@ -1,0 +1,13 @@
+[
+  {
+    "nuclide_id": "Bad-Mc",
+    "element_symbol": "Mc",
+    "atomic_number_z": 115,
+    "neutron_number_n": 175,
+    "mass_number_a": 291,
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "BadMc"
+    }
+  }
+]
