@@ -1,0 +1,22 @@
+{
+  "manifest_id": "manifest-2026-04-10-example",
+  "manifest_version": "1.0.0",
+  "repository_name": "Superheavy-Survival-Audit",
+  "repository_version": "0.1.0a0",
+  "generated_date": "2026-04-10",
+  "source_registry_path": "data/registry/source_registry.json",
+  "source_registry_hash": "replace-with-registry-digest-if-used",
+  "input_artifacts": [
+    "data/raw/example/upstream_payload.json",
+    "data/registry/source_registry.json"
+  ],
+  "output_artifacts": [
+    "data/processed/example/normalized_records.json",
+    "results/example/benchmark_pack.json"
+  ],
+  "code_paths": [
+    "src/superheavy_survival_audit/provenance/registry.py",
+    "src/superheavy_survival_audit/reproducibility/manifest.py"
+  ],
+  "notes": "Template manifest for release-grade processed datasets and generated outputs."
+}
