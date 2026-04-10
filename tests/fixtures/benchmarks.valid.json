@@ -1,0 +1,14 @@
+[
+  {
+    "benchmark_id": "bench-001",
+    "subject_id": "Mc-290",
+    "benchmark_kind": "evaluated_data_alignment",
+    "reference_label": "NUBASE comparison",
+    "status": "informational",
+    "rationale": "Fixture benchmark entry for canonical loader validation.",
+    "source_pointer": {
+      "source_name": "nubase2020",
+      "source_record_id": "Mc290"
+    }
+  }
+]
