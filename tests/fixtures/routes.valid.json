@@ -1,0 +1,15 @@
+[
+  {
+    "route_id": "route-001",
+    "target_nuclide_id": "Mc-290",
+    "route_class": "fusion_evaporation",
+    "descriptor": "Candidate non-operational heavy-ion route abstraction.",
+    "feasibility_class": "low",
+    "bottleneck_penalty": 0.75,
+    "route_notes": "Illustrative placeholder route metadata for validation tests.",
+    "source_pointer": {
+      "source_name": "iaea_livechart",
+      "source_record_id": "route-placeholder-001"
+    }
+  }
+]
