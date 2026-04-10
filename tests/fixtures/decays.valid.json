@@ -1,0 +1,16 @@
+[
+  {
+    "decay_id": "Mc-290-alpha",
+    "parent_nuclide_id": "Mc-290",
+    "daughter_nuclide_id": "Nh-286",
+    "decay_mode": "alpha",
+    "branching_fraction": 0.82,
+    "branching_uncertainty": 0.03,
+    "q_value_mev": 10.12,
+    "q_value_uncertainty_mev": 0.11,
+    "source_pointer": {
+      "source_name": "ensdf",
+      "source_record_id": "Mc290-alpha"
+    }
+  }
+]
