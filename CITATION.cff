@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Superheavy-Survival-Audit"
+message: "If you use this repository, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Lovell"
+    given-names: "Bryce"
+license: "Apache-2.0"
+version: "0.1.0a0"
+date-released: 2026-04-10
+repository-code: "https://github.com/BryceWDesign/Superheavy-Survival-Audit"
+abstract: >
+  Observability-first audit tooling for superheavy nuclei survival, decay
+  legibility, route feasibility, and uncertainty-aware benchmarking.
+keywords:
+  - nuclear physics
+  - superheavy elements
+  - observability
+  - decay chains
+  - route feasibility
+  - uncertainty
