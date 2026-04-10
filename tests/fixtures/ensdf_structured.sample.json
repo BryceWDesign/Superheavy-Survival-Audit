@@ -1,0 +1,33 @@
+{
+  "dataset_id": "ensdf-sample-mc290",
+  "decay_branches": [
+    {
+      "branch_id": "Mc290-alpha",
+      "parent_nuclide_id": "Mc-290",
+      "decay_mode": "alpha",
+      "daughter_nuclide_id": "Nh-286",
+      "branching_fraction": 0.82,
+      "branching_uncertainty": 0.03,
+      "q_value_mev": 10.12,
+      "q_value_uncertainty_mev": 0.11
+    },
+    {
+      "branch_id": "Mc290-sf",
+      "parent_nuclide_id": "Mc-290",
+      "decay_mode": "spontaneous_fission",
+      "branching_fraction": 0.18,
+      "branching_uncertainty": 0.02
+    }
+  ],
+  "radiation_observations": [
+    {
+      "observation_id": "Nh286-gamma-001",
+      "parent_nuclide_id": "Nh-286",
+      "radiation_kind": "gamma",
+      "energy_kev": 218.5,
+      "intensity_fraction": 0.42,
+      "intensity_uncertainty": 0.03,
+      "final_level_label": "level-1"
+    }
+  ]
+}
