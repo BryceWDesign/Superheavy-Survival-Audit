@@ -1,0 +1,19 @@
+Superheavy-Survival-Audit
+Copyright 2026 Bryce Lovell
+
+This repository is licensed under the Apache License, Version 2.0.
+
+Unless otherwise stated in a specific third-party file, all original source
+code, configuration, tests, schemas, generated templates, and repository
+infrastructure in this project are provided under Apache-2.0.
+
+Third-party datasets, bibliographic references, and externally sourced
+scientific facts remain subject to their original terms, licenses, and
+citation requirements. Inclusion of source metadata or normalized records in
+this repository does not imply transfer of upstream intellectual property
+rights.
+
+This repository is intended as a research and audit tool. It does not make
+experimental claims, does not provide laboratory instructions for producing
+superheavy nuclei, and does not constitute engineering, medical, legal, or
+safety advice.
