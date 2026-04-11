@@ -1,0 +1,90 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Superheavy-Survival-Audit SBOM",
+  "documentNamespace": "https://example.org/spdx/Superheavy-Survival-Audit-0.1.0a0-2026-04-10",
+  "creationInfo": {
+    "created": "2026-04-10T00:00:00Z",
+    "creators": [
+      "Person: Bryce Lovell",
+      "Tool: Manual Repository SBOM Draft"
+    ],
+    "licenseListVersion": "3.26"
+  },
+  "documentDescribes": [
+    "SPDXRef-Package-Superheavy-Survival-Audit"
+  ],
+  "packages": [
+    {
+      "name": "Superheavy-Survival-Audit",
+      "SPDXID": "SPDXRef-Package-Superheavy-Survival-Audit",
+      "versionInfo": "0.1.0a0",
+      "supplier": "Person: Bryce Lovell",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright 2026 Bryce Lovell",
+      "primaryPackagePurpose": "SOURCE"
+    },
+    {
+      "name": "Python",
+      "SPDXID": "SPDXRef-Package-Python",
+      "versionInfo": ">=3.11",
+      "supplier": "Organization: Python Software Foundation",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "FRAMEWORK"
+    },
+    {
+      "name": "setuptools",
+      "SPDXID": "SPDXRef-Package-setuptools",
+      "versionInfo": ">=69",
+      "supplier": "Organization: Python Packaging Authority",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "BUILD_TOOL"
+    },
+    {
+      "name": "wheel",
+      "SPDXID": "SPDXRef-Package-wheel",
+      "versionInfo": "unspecified",
+      "supplier": "Organization: Python Packaging Authority",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "BUILD_TOOL"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-Superheavy-Survival-Audit"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Superheavy-Survival-Audit",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-Python"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Superheavy-Survival-Audit",
+      "relationshipType": "BUILD_DEPENDENCY_OF",
+      "relatedSpdxElement": "SPDXRef-Package-setuptools"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Superheavy-Survival-Audit",
+      "relationshipType": "BUILD_DEPENDENCY_OF",
+      "relatedSpdxElement": "SPDXRef-Package-wheel"
+    }
+  ]
+}
