@@ -6,12 +6,13 @@ authors:
   - family-names: "Lovell"
     given-names: "Bryce"
 license: "Apache-2.0"
-version: "0.1.0a0"
+version: "0.1.0"
 date-released: 2026-04-10
 repository-code: "https://github.com/BryceWDesign/Superheavy-Survival-Audit"
 abstract: >
   Observability-first audit tooling for superheavy nuclei survival, decay
-  legibility, route feasibility, and uncertainty-aware benchmarking.
+  legibility, route feasibility, uncertainty-aware benchmarking, and reviewer-
+  facing audit artifacts.
 keywords:
   - nuclear physics
   - superheavy elements
@@ -19,3 +20,4 @@ keywords:
   - decay chains
   - route feasibility
   - uncertainty
+  - benchmarking
