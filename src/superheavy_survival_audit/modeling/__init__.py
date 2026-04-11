@@ -2,6 +2,11 @@
 Modeling utilities for Superheavy-Survival-Audit.
 """
 
+from .ablation import (
+    SurvivalComponentAblation,
+    SurvivalAblationSummary,
+    run_survival_component_ablation,
+)
 from .bayesian_weights import (
     SurvivalComponentPosterior,
     SurvivalComponentPrior,
@@ -19,8 +24,11 @@ from .survival import (
 __all__ = [
     "MonteCarloSensitivitySummary",
     "SurvivalAuditScore",
+    "SurvivalAblationSummary",
+    "SurvivalComponentAblation",
     "SurvivalComponentPosterior",
     "SurvivalComponentPrior",
+    "run_survival_component_ablation",
     "run_survival_weight_monte_carlo",
     "score_baseline_survival_audit",
     "score_bayesian_survival_audit",
