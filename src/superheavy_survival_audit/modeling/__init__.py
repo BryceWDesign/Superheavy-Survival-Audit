@@ -22,6 +22,10 @@ from .monte_carlo import (
     MonteCarloSensitivitySummary,
     run_survival_weight_monte_carlo,
 )
+from .posterior_checks import (
+    PosteriorPredictiveSummary,
+    run_survival_posterior_predictive_check,
+)
 from .survival import (
     SurvivalAuditScore,
     score_baseline_survival_audit,
@@ -31,6 +35,7 @@ __all__ = [
     "MassResidualConsensus",
     "MassResidualObservation",
     "MonteCarloSensitivitySummary",
+    "PosteriorPredictiveSummary",
     "ReferenceMassPrediction",
     "SurvivalAuditScore",
     "SurvivalAblationSummary",
@@ -39,6 +44,7 @@ __all__ = [
     "SurvivalComponentPrior",
     "build_mass_residual_consensus",
     "run_survival_component_ablation",
+    "run_survival_posterior_predictive_check",
     "run_survival_weight_monte_carlo",
     "score_baseline_survival_audit",
     "score_bayesian_survival_audit",
