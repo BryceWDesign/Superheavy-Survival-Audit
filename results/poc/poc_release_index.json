@@ -11,7 +11,7 @@
     "Scores remain repository-defined surrogates."
   ],
   "repository_name": "Superheavy-Survival-Audit",
-  "repository_version": "0.1.0a0",
+  "repository_version": "0.1.0",
   "tables": [
     "results/poc/tables/poc_survival_summary.csv",
     "results/poc/tables/poc_route_information_gain.csv",
