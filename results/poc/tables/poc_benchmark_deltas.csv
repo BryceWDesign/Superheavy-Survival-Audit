@@ -1,0 +1,5 @@
+benchmark_id,subject_id,reference_label,delta_kind,previous_status,current_status,classification
+bench-001,Mc-290,Reference A,status_changed,fail,mixed,improved
+bench-002,Mc-291,Reference B,unchanged,pass,pass,unchanged
+bench-003,Lv-292,Reference C,removed,informational,missing,removed
+bench-004,Ts-294,Reference D,added,missing,not_run,added
