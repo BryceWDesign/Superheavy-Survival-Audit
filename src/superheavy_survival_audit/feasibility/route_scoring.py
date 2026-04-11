@@ -8,6 +8,7 @@ The purpose is narrower:
 - take a canonical RouteRecord
 - combine its high-level feasibility metadata with already-derived evidence
   layers from elsewhere in the repository
+- optionally incorporate a structured constraint assessment
 - return a bounded, auditable route-feasibility score suitable for ranking and
   comparison under explicit assumptions
 
@@ -37,6 +38,8 @@ from superheavy_survival_audit.schemas.common import (
     require_non_empty,
     require_probability,
 )
+
+from .constraints import RouteConstraintAssessment
 
 _ROUTE_CLASS_PRIORS: dict[str, float] = {
     "fusion_evaporation": 0.55,
@@ -146,12 +149,39 @@ class RouteFeasibilityScore:
         )
 
 
+def _resolve_bottleneck_retention(
+    route_record: RouteRecord,
+    constraint_assessment: RouteConstraintAssessment | None,
+    feasibility_class_support: float,
+) -> float:
+    """
+    Resolve bottleneck retention from either a structured assessment or the
+    route record's direct penalty field.
+    """
+    if constraint_assessment is not None:
+        if constraint_assessment.route_id != route_record.route_id:
+            raise SchemaValidationError(
+                "constraint_assessment.route_id must match route_record.route_id."
+            )
+        if constraint_assessment.target_nuclide_id != route_record.target_nuclide_id:
+            raise SchemaValidationError(
+                "constraint_assessment.target_nuclide_id must match "
+                "route_record.target_nuclide_id."
+            )
+        return constraint_assessment.bottleneck_retention
+
+    if route_record.bottleneck_penalty is None:
+        return feasibility_class_support
+    return _clamp_unit_interval(1.0 - route_record.bottleneck_penalty)
+
+
 def score_route_feasibility(
     route_record: RouteRecord,
     *,
     observability_score: ObservabilityScore | None = None,
     ambiguity_score: AmbiguityScore | None = None,
     mass_residual_consensus: MassResidualConsensus | None = None,
+    constraint_assessment: RouteConstraintAssessment | None = None,
 ) -> RouteFeasibilityScore:
     """
     Score one candidate route under the repository's non-operational feasibility logic.
@@ -176,10 +206,11 @@ def score_route_feasibility(
             f"{route_record.feasibility_class}"
         )
 
-    if route_record.bottleneck_penalty is None:
-        bottleneck_retention = feasibility_class_support
-    else:
-        bottleneck_retention = _clamp_unit_interval(1.0 - route_record.bottleneck_penalty)
+    bottleneck_retention = _resolve_bottleneck_retention(
+        route_record,
+        constraint_assessment,
+        feasibility_class_support,
+    )
 
     observability_support = (
         0.50 if observability_score is None else observability_score.composite_score
