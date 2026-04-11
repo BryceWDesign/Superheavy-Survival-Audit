@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360">
+  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+  <text x="380" y="28" font-size="22" text-anchor="middle" fill="#111827">PoC Route Information Gain Ranking</text>
+  <text x="380" y="48" font-size="12" text-anchor="middle" fill="#4B5563">Repository-defined illustration only; not an experimental claim</text>
+
+  <line x1="90" y1="60" x2="90" y2="300" stroke="#374151" stroke-width="2" />
+  <line x1="90" y1="300" x2="720" y2="300" stroke="#374151" stroke-width="2" />
+
+  <line x1="82" y1="300" x2="90" y2="300" stroke="#374151" stroke-width="1" />
+  <text x="74" y="305" font-size="12" text-anchor="end" fill="#374151">0.0</text>
+  <line x1="90" y1="300" x2="720" y2="300" stroke="#E5E7EB" stroke-width="1" />
+
+  <line x1="82" y1="252" x2="90" y2="252" stroke="#374151" stroke-width="1" />
+  <text x="74" y="257" font-size="12" text-anchor="end" fill="#374151">0.2</text>
+  <line x1="90" y1="252" x2="720" y2="252" stroke="#E5E7EB" stroke-width="1" />
+
+  <line x1="82" y1="204" x2="90" y2="204" stroke="#374151" stroke-width="1" />
+  <text x="74" y="209" font-size="12" text-anchor="end" fill="#374151">0.4</text>
+  <line x1="90" y1="204" x2="720" y2="204" stroke="#E5E7EB" stroke-width="1" />
+
+  <line x1="82" y1="156" x2="90" y2="156" stroke="#374151" stroke-width="1" />
+  <text x="74" y="161" font-size="12" text-anchor="end" fill="#374151">0.6</text>
+  <line x1="90" y1="156" x2="720" y2="156" stroke="#E5E7EB" stroke-width="1" />
+
+  <line x1="82" y1="108" x2="90" y2="108" stroke="#374151" stroke-width="1" />
+  <text x="74" y="113" font-size="12" text-anchor="end" fill="#374151">0.8</text>
+  <line x1="90" y1="108" x2="720" y2="108" stroke="#E5E7EB" stroke-width="1" />
+
+  <line x1="82" y1="60" x2="90" y2="60" stroke="#374151" stroke-width="1" />
+  <text x="74" y="65" font-size="12" text-anchor="end" fill="#374151">1.0</text>
+  <line x1="90" y1="60" x2="720" y2="60" stroke="#E5E7EB" stroke-width="1" />
+
+  <rect x="90" y="135" width="110" height="165" fill="#5B8DEF" stroke="#1F2937" stroke-width="1" />
+  <text x="145" y="125" font-size="13" text-anchor="middle" fill="#111827">0.688</text>
+  <text x="145" y="324" font-size="14" text-anchor="middle" fill="#111827">route-a</text>
+
+  <rect x="270" y="146" width="110" height="154" fill="#5B8DEF" stroke="#1F2937" stroke-width="1" />
+  <text x="325" y="136" font-size="13" text-anchor="middle" fill="#111827">0.640</text>
+  <text x="325" y="324" font-size="14" text-anchor="middle" fill="#111827">route-b</text>
+
+  <rect x="450" y="187" width="110" height="113" fill="#5B8DEF" stroke="#1F2937" stroke-width="1" />
+  <text x="505" y="177" font-size="13" text-anchor="middle" fill="#111827">0.472</text>
+  <text x="505" y="324" font-size="14" text-anchor="middle" fill="#111827">route-c</text>
+
+  <text x="24" y="180" font-size="14" transform="rotate(-90 24,180)" text-anchor="middle" fill="#111827">Composite score</text>
+  <text x="380" y="346" font-size="14" text-anchor="middle" fill="#111827">Candidate routes</text>
+</svg>
