@@ -1,0 +1,4 @@
+rank_position,route_id,target_nuclide_id,disagreement_signal,observability_support,feasibility_support,benchmark_scarcity,ambiguity_retention,composite_score
+1,route-a,Mc-290,0.65,0.80,0.657,0.50,0.80,0.688
+2,route-b,Mc-291,0.90,0.45,0.523,0.80,0.40,0.640
+3,route-c,Lv-292,0.40,0.70,0.432,0.25,0.90,0.472
