@@ -1,0 +1,21 @@
+{
+  "artifact_pack_label": "proof_of_concept_release_artifacts",
+  "figures": [
+    "results/poc/figures/poc_route_information_gain.svg",
+    "results/poc/figures/poc_survival_vs_information_gain.svg"
+  ],
+  "generated_date": "2026-04-10",
+  "notes": [
+    "Illustrative repository outputs only.",
+    "These artifacts are deterministic and non-operational.",
+    "Scores remain repository-defined surrogates."
+  ],
+  "repository_name": "Superheavy-Survival-Audit",
+  "repository_version": "0.1.0a0",
+  "tables": [
+    "results/poc/tables/poc_survival_summary.csv",
+    "results/poc/tables/poc_route_information_gain.csv",
+    "results/poc/tables/poc_benchmark_deltas.csv",
+    "results/poc/tables/poc_negative_controls.csv"
+  ]
+}
