@@ -1,0 +1,5 @@
+nuclide_id,baseline_survival_score,posterior_survival_score,monte_carlo_mean_score,predictive_lower_score,predictive_upper_score
+Mc-290,0.613,0.609,0.608,0.516,0.691
+Mc-291,0.674,0.648,0.646,0.558,0.722
+Mc-288,0.061,0.086,0.089,0.031,0.156
+Lv-292,0.214,0.239,0.241,0.161,0.331
