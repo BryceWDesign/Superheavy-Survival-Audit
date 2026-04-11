@@ -1,3 +1,5 @@
-# Keep the directory in version control while ignoring its contents.
+# Keep the directory in version control while ignoring most generated contents.
 *
 !.gitignore
+!poc/
+!poc/**
