@@ -15,7 +15,7 @@ the same thing as software dependencies.
 ## 1. Repository identity
 
 - Repository: `Superheavy-Survival-Audit`
-- Repository version target: `0.1.0a0`
+- Repository version target: `0.1.0`
 - License: `Apache-2.0`
 - Author / maintainer: `Bryce Lovell`
 
