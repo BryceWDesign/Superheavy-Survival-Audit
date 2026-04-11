@@ -2,7 +2,7 @@
   "manifest_id": "manifest-2026-04-10-example",
   "manifest_version": "1.0.0",
   "repository_name": "Superheavy-Survival-Audit",
-  "repository_version": "0.1.0a0",
+  "repository_version": "0.1.0",
   "generated_date": "2026-04-10",
   "source_registry_path": "data/registry/source_registry.json",
   "source_registry_hash": "replace-with-registry-digest-if-used",
