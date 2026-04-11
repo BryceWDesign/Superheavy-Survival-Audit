@@ -1,0 +1,70 @@
+{
+  "well_supported_chain": {
+    "root_nuclide_id": "Mc-290",
+    "decay_records": [
+      {
+        "decay_id": "Mc290-alpha",
+        "parent_nuclide_id": "Mc-290",
+        "daughter_nuclide_id": "Nh-286",
+        "decay_mode": "alpha",
+        "branching_fraction": 0.82,
+        "q_value_mev": 10.12
+      },
+      {
+        "decay_id": "Nh286-alpha",
+        "parent_nuclide_id": "Nh-286",
+        "daughter_nuclide_id": "Rg-282",
+        "decay_mode": "alpha",
+        "branching_fraction": 0.77,
+        "q_value_mev": 9.51
+      },
+      {
+        "decay_id": "Rg282-sf",
+        "parent_nuclide_id": "Rg-282",
+        "decay_mode": "spontaneous_fission",
+        "branching_fraction": 0.23
+      }
+    ],
+    "radiation_observations": [
+      {
+        "observation_id": "Nh286-gamma-001",
+        "parent_nuclide_id": "Nh-286",
+        "radiation_kind": "gamma",
+        "energy_kev": 218.5,
+        "intensity_fraction": 0.42
+      },
+      {
+        "observation_id": "Rg282-xray-001",
+        "parent_nuclide_id": "Rg-282",
+        "radiation_kind": "xray",
+        "energy_kev": 95.0,
+        "intensity_fraction": 0.18
+      }
+    ]
+  },
+  "degraded_chain": {
+    "root_nuclide_id": "Mc-290",
+    "decay_records": [
+      {
+        "decay_id": "Mc290-alpha",
+        "parent_nuclide_id": "Mc-290",
+        "daughter_nuclide_id": "Nh-286",
+        "decay_mode": "alpha",
+        "branching_fraction": 0.45
+      },
+      {
+        "decay_id": "Mc290-sf",
+        "parent_nuclide_id": "Mc-290",
+        "decay_mode": "spontaneous_fission",
+        "branching_fraction": 0.35
+      },
+      {
+        "decay_id": "Nh286-unknown",
+        "parent_nuclide_id": "Nh-286",
+        "decay_mode": "unknown",
+        "branching_fraction": 0.20
+      }
+    ],
+    "radiation_observations": []
+  }
+}
