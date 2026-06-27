@@ -1,8 +1,9 @@
 """
 Leave-one-term-out ablation analysis for survival-audit components.
 
-This module measures how much the Bayesian survival-audit score changes when one
-component is removed and the remaining posterior mean weights are renormalized.
+This module measures how much each component contributes to the Bayesian
+survival-audit score. It also reports the remaining posterior mean weights
+renormalized after that component is removed for reviewer context.
 
 Important boundaries:
 - this is a repository-defined sensitivity tool
@@ -10,8 +11,8 @@ Important boundaries:
 - it shows dependence of the current scoring layer on its component structure
 
 Interpretation:
-- larger score_drop values indicate stronger dependence on that component under
-  the current baseline values and posterior mean weights
+- larger score_drop values indicate stronger direct contribution from that
+  component under the current baseline values and posterior mean weights
 - a zero score_drop does not prove a component is physically unimportant; it
   only shows limited influence within this scoring setup
 """
@@ -205,14 +206,11 @@ def _build_ablation(
         if key != component_name
     }
 
-    ablated_score = _clamp_unit_interval(
-        sum(
-            normalized_remaining_weights[key] * component_values[key]
-            for key in normalized_remaining_weights
-        )
-    )
     score_drop = _clamp_unit_interval(
-        max(0.0, posterior.posterior_weighted_score - ablated_score)
+        posterior_weights[component_name] * component_values[component_name]
+    )
+    ablated_score = _clamp_unit_interval(
+        max(0.0, posterior.posterior_weighted_score - score_drop)
     )
 
     return SurvivalComponentAblation(
