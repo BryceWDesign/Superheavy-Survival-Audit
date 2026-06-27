@@ -7,7 +7,7 @@ It produces repository-defined sensitivity summaries for the current surrogate
 weight model.
 
 The main purpose is to answer narrower questions such as:
-- how wide is the score spread under the current posterior weight uncertainty?
+- how wide is the central score spread under the current posterior weight uncertainty?
 - which component weights move the sampled score most?
 - how stable is the posterior-weighted score relative to sampled weight draws?
 
@@ -17,6 +17,7 @@ This is useful for ranking robustness and assumption stress-testing.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import sqrt
 from random import Random
 from statistics import mean, pstdev
 
@@ -63,6 +64,38 @@ def _quantile(sorted_values: list[float], q: float) -> float:
     lower_value = sorted_values[lower_index]
     upper_value = sorted_values[upper_index]
     return lower_value + (fraction * (upper_value - lower_value))
+
+
+def _dirichlet_weighted_score_std(
+    posterior: SurvivalComponentPosterior,
+) -> float:
+    """
+    Return the exact posterior standard deviation for the weighted score.
+
+    Sampling is still used for quantiles and representative draws, but the
+    standard deviation is computed from Dirichlet moments to avoid small-sample
+    ordering reversals when comparing different evidence strengths.
+    """
+    alpha_values = [posterior.posterior_alphas[name] for name in _COMPONENT_NAMES]
+    component_values = [posterior.component_values[name] for name in _COMPONENT_NAMES]
+    total_alpha = sum(alpha_values)
+    if total_alpha <= 0.0:
+        raise SchemaValidationError(
+            "Dirichlet posterior must have positive concentration."
+        )
+
+    weighted_mean = sum(
+        alpha * value for alpha, value in zip(alpha_values, component_values)
+    ) / total_alpha
+    second_moment = sum(
+        alpha * value * value for alpha, value in zip(alpha_values, component_values)
+    ) / total_alpha
+    variance = (second_moment - (weighted_mean * weighted_mean)) / (total_alpha + 1.0)
+    if variance < 0.0 and abs(variance) <= 1e-15:
+        variance = 0.0
+    if variance < 0.0:
+        raise SchemaValidationError("Dirichlet score variance must not be negative.")
+    return sqrt(variance)
 
 
 def _sample_dirichlet(
@@ -256,6 +289,9 @@ def _summarize_posterior_samples(
         sampled_scores.append(sampled_score)
 
     sorted_scores = sorted(sampled_scores)
+    lower_quantile_score = _quantile(sorted_scores, 0.05)
+    median_score = _quantile(sorted_scores, 0.50)
+    upper_quantile_score = _quantile(sorted_scores, 0.95)
     component_mean_weights = {
         name: mean(weight_samples[name]) for name in _COMPONENT_NAMES
     }
@@ -270,13 +306,13 @@ def _summarize_posterior_samples(
         evidence_strength=posterior.evidence_strength,
         posterior_mean_score=posterior.posterior_weighted_score,
         monte_carlo_mean_score=mean(sampled_scores),
-        monte_carlo_std_score=pstdev(sampled_scores),
-        lower_quantile_score=_quantile(sorted_scores, 0.05),
-        median_score=_quantile(sorted_scores, 0.50),
-        upper_quantile_score=_quantile(sorted_scores, 0.95),
+        monte_carlo_std_score=_dirichlet_weighted_score_std(posterior),
+        lower_quantile_score=lower_quantile_score,
+        median_score=median_score,
+        upper_quantile_score=upper_quantile_score,
         min_score=sorted_scores[0],
         max_score=sorted_scores[-1],
-        score_spread=sorted_scores[-1] - sorted_scores[0],
+        score_spread=upper_quantile_score - lower_quantile_score,
         component_mean_weights=component_mean_weights,
         component_std_weights=component_std_weights,
     )
