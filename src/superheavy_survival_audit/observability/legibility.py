@@ -7,7 +7,9 @@ repository-defined view of how much chain support exists at each reachable node.
 
 Current node-level legibility components:
 - incoming branch support:
-  mean of daughter linkage presence and Q-value availability for parent->node edges
+  mean of resolved parent-branch linkage and Q-value availability for
+  parent->node edges, measured against the parent branch surface so unresolved
+  competing branches reduce node legibility
 - radiation support:
   whether structured radiation observations exist for the node
 - continuation support:
@@ -221,7 +223,9 @@ def build_daughter_chain_legibility_profile(
     nodes: list[DaughterChainLegibilityNode] = []
     max_reached_depth = 0
 
-    for nuclide_id, depth in sorted(visited_depths.items(), key=lambda item: (item[1], item[0])):
+    for nuclide_id, depth in sorted(
+        visited_depths.items(), key=lambda item: (item[1], item[0])
+    ):
         incoming_branches = incoming_index.get(nuclide_id, [])
         outgoing_branches = parent_index.get(nuclide_id, [])
 
@@ -233,16 +237,33 @@ def build_daughter_chain_legibility_profile(
             parent_nuclide_ids = tuple(
                 sorted({branch.parent_nuclide_id for branch in incoming_branches})
             )
+            parent_branch_count = sum(
+                len(parent_index.get(parent_id, ())) for parent_id in parent_nuclide_ids
+            )
+            incoming_denominator = (
+                parent_branch_count
+                if parent_branch_count > 0
+                else len(incoming_branches)
+            )
             incoming_link_fraction = (
-                sum(1 for branch in incoming_branches if branch.daughter_nuclide_id is not None)
-                / len(incoming_branches)
-                if incoming_branches
+                sum(
+                    1
+                    for branch in incoming_branches
+                    if branch.daughter_nuclide_id == nuclide_id
+                )
+                / incoming_denominator
+                if incoming_denominator
                 else 0.0
             )
             incoming_q_value_fraction = (
-                sum(1 for branch in incoming_branches if branch.q_value_mev is not None)
-                / len(incoming_branches)
-                if incoming_branches
+                sum(
+                    1
+                    for branch in incoming_branches
+                    if branch.daughter_nuclide_id == nuclide_id
+                    and branch.q_value_mev is not None
+                )
+                / incoming_denominator
+                if incoming_denominator
                 else 0.0
             )
 
