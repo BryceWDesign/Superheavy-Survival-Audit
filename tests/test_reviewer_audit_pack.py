@@ -3,7 +3,9 @@ from __future__ import annotations
 import pytest
 
 from superheavy_survival_audit.benchmarks import (
+    BenchmarkDeltaRow,
     LiteratureBenchmarkRow,
+    ReviewerAuditPack,
     build_literature_benchmark_table,
     build_reviewer_audit_pack,
 )
@@ -117,18 +119,25 @@ def test_build_reviewer_audit_pack_without_previous_table_marks_all_rows_added()
     assert pack.change_classification_counts["added"] == 2
 
 
-def test_build_reviewer_audit_pack_rejects_duplicate_benchmark_ids_in_delta_rows() -> None:
+def test_reviewer_audit_pack_rejects_duplicate_benchmark_ids_in_delta_rows() -> None:
     current_table = build_literature_benchmark_table(
         "Current",
         [_build_row("bench-001", "Mc-290", "Reference A", "pass")],
     )
+    duplicate_delta_row = BenchmarkDeltaRow(
+        benchmark_id="bench-001",
+        subject_id="Mc-290",
+        reference_label="Reference A",
+        delta_kind="status_changed",
+        previous_status="fail",
+        current_status="pass",
+        status_transition="fail -> pass",
+        change_classification="improved",
+    )
 
     with pytest.raises(SchemaValidationError):
-        build_reviewer_audit_pack(
-            "Audit Pack",
-            current_table,
-            previous_table=build_literature_benchmark_table(
-                "Previous",
-                [_build_row("bench-001", "Mc-290", "Reference A", "fail")],
-            ),
+        ReviewerAuditPack(
+            title="Audit Pack",
+            current_table=current_table,
+            delta_rows=(duplicate_delta_row, duplicate_delta_row),
         )
